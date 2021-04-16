@@ -1,0 +1,117 @@
+
+C:\Users\User>mysqldump -u root -p exemple > exemple.sql
+Enter password: **********
+
+C:\Users\User>dir
+ Том в устройстве C не имеет метки.
+ Серийный номер тома: 8C96-CE88
+
+ Содержимое папки C:\Users\User
+
+15.04.2021  12:18    <DIR>          .
+15.04.2021  12:18    <DIR>          ..
+30.01.2021  10:47    <DIR>          .config
+13.04.2021  11:54    <DIR>          .dbeaver-drivers
+13.04.2021  11:51    <DIR>          .dbeaver4
+13.04.2021  11:56    <DIR>          .eclipse
+30.01.2021  10:47                47 .gitconfig
+13.04.2021  11:51    <DIR>          .oracle_jre_usage
+30.01.2021  10:47    <DIR>          .ssh
+15.04.2021  10:02    <DIR>          .VirtualBox
+05.01.2021  19:30    <DIR>          3D Objects
+05.01.2021  19:30    <DIR>          Contacts
+15.04.2021  09:51    <DIR>          Desktop
+27.02.2021  12:34    <DIR>          Documents
+15.04.2021  11:33    <DIR>          Downloads
+15.04.2021  12:18               796 example.sql
+15.04.2021  12:18             1 946 exemple.sql
+05.01.2021  19:30    <DIR>          Favorites
+05.01.2021  19:30    <DIR>          Links
+05.01.2021  19:30    <DIR>          Music
+14.04.2021  11:50    <DIR>          MySql
+07.04.2021  17:59    <DIR>          OneDrive
+05.01.2021  19:31    <DIR>          Pictures
+14.02.2021  20:35    <DIR>          PycharmProjects
+05.01.2021  19:30    <DIR>          Saved Games
+05.01.2021  19:31    <DIR>          Searches
+14.03.2021  17:45    <DIR>          Videos
+01.03.2021  13:22    <DIR>          vimfiles
+18.02.2021  11:02    <DIR>          VirtualBox VMs
+04.03.2021  14:57            14 093 _viminfo
+               4 файлов         16 882 байт
+              26 папок  98 628 292 608 байт свободно
+
+C:\Users\User>mysql -u root -p
+Enter password: **********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 25
+Server version: 8.0.23 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> CREATE DATABASE sample;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> exit
+Bye
+
+C:\Users\User>mysql -u root -p sample < exemple.sql
+Enter password: **********
+
+C:\Users\User>mysql -u root -p
+Enter password: **********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 27
+Server version: 8.0.23 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> USE sample;
+Database changed
+mysql> SHOW TABLES;
++------------------+
+| Tables_in_sample |
++------------------+
+| users            |
++------------------+
+1 row in set (0.00 sec)
+
+mysql> EXIT
+Bye
+
+C:\Users\User>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

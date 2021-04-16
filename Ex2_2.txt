@@ -1,0 +1,64 @@
+Microsoft Windows [Version 10.0.19041.867]
+(c) Корпорация Майкрософт (Microsoft Corporation), 2020. Все права защищены.
+
+C:\Users\User>mysql -u root -p
+Enter password: **********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 22
+Server version: 8.0.23 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)
+
+mysql> CREATE DATABASE exemple;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| exemple            |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> CREATE TABLE users (id SERIAL, name WARCHAR(100) NOT NULL UNIQUE);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WARCHAR(100) NOT NULL UNIQUE)' at line 1
+mysql> CREATE TABLE users (id SERIAL, name VARCHAR(100) NOT NULL UNIQUE);
+ERROR 1046 (3D000): No database selected
+mysql> USE exemple
+Database changed
+mysql> CREATE TABLE users (id SERIAL, name VARCHAR(100) NOT NULL UNIQUE);
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> SHOW TABLES
+    -> SHOW TABLES;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SHOW TABLES' at line 2
+mysql> SHOW TABLES;
++-------------------+
+| Tables_in_exemple |
++-------------------+
+| users             |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql>
